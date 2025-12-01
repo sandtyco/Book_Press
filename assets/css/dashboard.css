@@ -1,0 +1,140 @@
+/*
+ * DASHBOARD CUSTOM STYLES
+ * Dibuat berdasarkan template Bootstrap 3 Dashboard
+ * Mengoptimalkan layout, tema gelap sidebar, dan fixing dropdown/collapse
+ */
+
+/* -------------------------------------------------- */
+/* 1. KOREKSI NAVIGASI & BODY (FIXED HEADER & LAYOUT) */
+/* -------------------------------------------------- */
+
+/* BODY: Pastikan body memiliki padding atas 50px untuk mengimbangi fixed navbar */
+body {
+    padding-top: 10px; 
+}
+
+/* MAIN CONTENT: Padding dasar */
+.main {
+    padding: 20px;
+}
+
+/* -------------------------------------------------- */
+/* 2. SIDEBAR DASAR & STYLING WARNA (DARK THEME) */
+/* -------------------------------------------------- */
+
+.sidebar {
+    /* Posisi Fixed: Kunci di sebelah kiri */
+    position: fixed;
+    top: 51px; /* Dimulai setelah navbar */
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px 0;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    background-color: #ffffff; /* Warna Dasar putih */
+    border-right: 1px solid #444; 
+}
+
+.sidebar .nav-sidebar a {
+    text-decoration: none;
+}
+
+/* Link Menu Utama */
+.sidebar .nav-sidebar > li > a {
+    color: #337ab7;
+    padding-left: 15px; 
+    border-left: 3px solid transparent; 
+}
+
+/* Hover Menu Utama */
+.sidebar .nav-sidebar > li > a:hover,
+.sidebar .nav-sidebar > li > a:focus {
+    color: #337ab7;
+    background-color: #ffffff; 
+}
+
+/* Status Menu Utama yang Sedang Aktif (LI memiliki kelas 'active') */
+.sidebar .nav-sidebar > li.active > a {
+    color: #337ab7;
+    background-color: #ffffff; 
+    border-left: 3px solid #000000; 
+    /* Menghapus gaya default Bootstrap yang mungkin menimpa */
+    background-image: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* Header Menu */
+.sidebar .nav-sidebar .sidebar-header {
+    margin: 15px 15px 5px;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+/* --- DROPDOWN (SUB-MENU) STYLING --- */
+
+/* Sub-menu container */
+.sidebar .nav-sidebar .collapse {
+    list-style: none;
+    padding: 0;
+}
+
+/* !!! FIX BENTURAN UTAMA: Memaksa collapse yang terbuka (.in) tetap menggunakan tema gelap !!! */
+.sidebar .nav-sidebar .collapse.in {
+    background-color: #ffffff; 
+}
+
+
+
+/* Status Aktif pada Sub-menu (active-submenu) */
+.sidebar .nav-sidebar .collapse li.active-submenu a {
+    color: #337ab7;
+    background-color: #ffffff; 
+    border-left: 3px solid #ffffff; 
+}
+
+/* -------------------------------------------------- */
+/* 3. MEDIA QUERIES (RESPONSIVITAS) */
+/* -------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /* Aturan untuk tampilan desktop */
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Aturan untuk tampilan mobile */
+    .sidebar {
+        position: static;
+        top: auto;
+        padding-bottom: 0;
+        margin-bottom: 20px;
+    }
+
+    .main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  background-color: #f5f5f5;
+}
+
+.side-footer {
+  position: absolute;
+  padding-top: 21px;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  background-color: #f5f5f5;
+}
